@@ -30,4 +30,4 @@ class Cell:
 #i don't think i did it right lol but it's a start
 
     def get_position(self):
-        return cell.row,cell.col,self.grid
+        return self.row,self.col,self.grid
