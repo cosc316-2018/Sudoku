@@ -25,9 +25,10 @@ class Cell:
 
     #gotta be a more efficient way to do this lol^^^
 
-
-#i want to be able to call this function on a cell object, and have it return the row, column, and grid of the object
-#i don't think i did it right lol but it's a start
-
+#returns value of row, column, and grid attributes in that order
     def get_position(self):
-        return self.row,self.col,self.grid
+        return self.row, self.col, self.grid
+
+#sets the value of the sudoku cell
+    def enter_value(self,value=0):
+        self.value=value
