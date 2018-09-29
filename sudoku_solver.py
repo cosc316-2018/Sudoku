@@ -155,8 +155,8 @@ class Board():
             print('The puzzle has been solved successfully!')
             # print the board if solved completely
             self.print_board()
-            # returning nothing exits the program
-            return
+            #  exit the program after the first solution is found
+            exit()
         else:
             for x in range(9):
                 for y in range(9):
@@ -165,22 +165,21 @@ class Board():
                         column = y
                         break
 
-        # find the possible entries for the specific cell
-        possible_entries = self.find_possibilities(row, column)
+            # find the possible entries for the specific cell
+            possible_entries = self.find_possibilities(row, column)
 
-        # main controller
-        for i in range(1, 10):
-            if possible_entries[i] != 0:
-                self.board[row][column].value = possible_entries[i]
-
-                # recursive call and backtracking
-                # enables the computer to try out the possible solutions
-                # until the correct solution is found
-                self.solve()
-        # backtrack
-        # if no solution is found, the cell is emptied and
-        # other possibilities are explored
-        self.board[row][column].value = 0
+            # main controller
+            for i in range(1, 10):
+                if possible_entries[i] != 0:
+                    self.board[row][column].value = possible_entries[i]
+                    # recursive call and backtracking
+                    # enables the computer to try out the possible solutions
+                    # until the correct solution is found
+                    self.solve()
+            # backtrack
+            # if no solution is found, the cell is emptied and
+            # other possibilities are explored
+            self.board[row][column].value = 0
 
 b = Board()
 b.create_puzzle({'0,0':7, '0,1':9, '0,6':3,
