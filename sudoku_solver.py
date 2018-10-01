@@ -180,16 +180,3 @@ class Board():
             # if no solution is found, the cell is emptied and
             # other possibilities are explored
             self.board[row][column].value = 0
-
-b = Board()
-b.create_puzzle({'0,0':7, '0,1':9, '0,6':3,
-                '1,5':6, '1,6':9,
-                '2,0':8, '2,4':3, '2,7':7, '2,8':6,
-                '3,5':5, '3,8':2,
-                '4,2':5, '4,3':4, '4,4':1, '4,5':8, '4,6':7,
-                '5,0':4, '5,3':7,
-                '6,0':6, '6,1':1, '6,4': 9, '6,8':8,
-                '7,2':2, '7,3':3,
-                '8,2':9, '8,7':5, '8,8':4})
-b.print_board()
-b.solve()
